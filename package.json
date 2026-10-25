@@ -4,6 +4,7 @@
   "scripts": {
     "build": "turbo run build",
     "cms": "decap-server",
+    "deploy": "pnpm build && node scripts/deploy.mjs",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
