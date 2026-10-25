@@ -1,0 +1,242 @@
+local_backend: true
+backend:
+  name: github
+  repo: mirusausiliq/ketayalyouth.com
+  branch: main
+media_folder: apps/website/public/uploads
+public_folder: /uploads
+collections:
+  - name: pages
+    label: 固定頁面
+    files:
+      - label: 首頁
+        name: home
+        file: content/pages/home.json
+        format: json
+        fields:
+          - { label: 頁面標題, name: title, widget: string }
+          - { label: 頁面代稱, name: slug, widget: hidden, default: home }
+          - label: 搜尋引擎設定
+            name: seo
+            widget: object
+            fields:
+              - { label: SEO 標題, name: title, widget: string }
+              - { label: SEO 摘要, name: description, widget: text }
+          - label: 首頁主視覺
+            name: hero
+            widget: object
+            fields:
+              - { label: 主標題, name: title, widget: string }
+              - { label: 泰雅語標題（待校訂）, name: titleTayal, widget: string }
+              - { label: 長文, name: body, widget: text }
+              - label: 主要按鈕
+                name: primaryLink
+                widget: object
+                fields:
+                  - { label: 按鈕文字, name: label, widget: string }
+                  - { label: 網址, name: href, widget: string }
+              - label: 次要按鈕
+                name: secondaryLink
+                widget: object
+                fields:
+                  - { label: 按鈕文字, name: label, widget: string }
+                  - { label: 網址, name: href, widget: string }
+          - label: 關於我們引言
+            name: introduction
+            widget: object
+            fields:
+              - { label: 段落標題, name: heading, widget: string }
+              - { label: 內文, name: body, widget: text }
+          - label: 參與入口
+            name: participation
+            widget: object
+            fields:
+              - { label: 標題, name: heading, widget: string }
+              - { label: 內文, name: body, widget: text }
+              - label: 入口連結
+                name: links
+                widget: list
+                fields:
+                  - { label: 標題, name: label, widget: string }
+                  - { label: 簡介, name: description, widget: text }
+                  - { label: 網址, name: href, widget: string }
+          - label: 青年行動
+            name: actions
+            widget: object
+            fields:
+              - { label: 標題, name: heading, widget: string }
+              - { label: 內文, name: body, widget: text }
+              - { label: 精選筆數, name: featuredLimit, widget: number }
+          - label: 近期動態
+            name: updates
+            widget: object
+            fields:
+              - { label: 標題, name: heading, widget: string }
+              - { label: 內文, name: body, widget: text }
+              - { label: 顯示筆數, name: latestLimit, widget: number }
+          - label: 頁尾理念
+            name: closing
+            widget: object
+            fields:
+              - { label: 標題, name: heading, widget: string }
+              - { label: 泰雅語標題（待校訂）, name: titleTayal, widget: string }
+              - { label: 內文, name: body, widget: text }
+              - label: 更多資訊
+                name: link
+                widget: object
+                fields:
+                  - { label: 按鈕文字, name: label, widget: string }
+                  - { label: 網址, name: href, widget: string }
+      - label: 關於我們
+        name: about
+        file: content/pages/about.json
+        format: json
+        fields:
+          - { label: 頁面標題, name: title, widget: string }
+          - { label: 頁面代稱, name: slug, widget: hidden, default: about }
+          - label: 搜尋引擎設定
+            name: seo
+            widget: object
+            fields:
+              - { label: SEO 標題, name: title, widget: string }
+              - { label: SEO 摘要, name: description, widget: text }
+          - label: 頁首
+            name: hero
+            widget: object
+            fields:
+              - { label: 眉題, name: eyebrow, widget: string }
+              - { label: 標題, name: title, widget: string }
+              - { label: 泰雅語（待校訂）, name: titleTayal, widget: string }
+              - { label: 內文, name: body, widget: text }
+          - label: 核心理念
+            name: values
+            widget: object
+            fields:
+              - { label: 標題, name: heading, widget: string }
+              - { label: 泰雅語（待校訂）, name: titleTayal, widget: string }
+              - { label: 導言, name: intro, widget: text }
+              - label: 理念項目
+                name: items
+                widget: list
+                fields:
+                  - { label: 固定 key, name: key, widget: string }
+                  - { label: 名稱, name: name, widget: string }
+                  - { label: 小標, name: heading, widget: string }
+                  - { label: 泰雅語（待校訂）, name: titleTayal, widget: string }
+                  - { label: 正文, name: body, widget: text }
+          - label: 六個組別
+            name: teams
+            widget: object
+            fields:
+              - { label: 標題, name: heading, widget: string }
+              - { label: 導言, name: intro, widget: text }
+              - label: 工作組別
+                name: items
+                widget: list
+                fields:
+                  - { label: 固定 key, name: key, widget: string }
+                  - { label: 組別名稱, name: name, widget: string }
+                  - { label: 泰雅語名稱（待校訂）, name: nameTayal, widget: string }
+                  - { label: 介紹正文, name: body, widget: text }
+          - label: 合作方式
+            name: collaboration
+            widget: object
+            fields:
+              - { label: 標題, name: heading, widget: string }
+              - { label: 內文, name: body, widget: text }
+          - label: 青年網絡
+            name: community
+            widget: object
+            fields:
+              - { label: 標題, name: heading, widget: string }
+              - { label: 內文, name: body, widget: text }
+          - label: 最後邀請
+            name: closing
+            widget: object
+            fields:
+              - { label: 標題, name: heading, widget: string }
+              - { label: 內文, name: body, widget: text }
+              - label: 導覽按鈕
+                name: links
+                widget: list
+                fields:
+                  - { label: 按鈕文字, name: label, widget: string }
+                  - { label: 網址, name: href, widget: string }
+      - label: 活動
+        name: events
+        file: content/pages/events.json
+        format: json
+        fields:
+          - { label: 頁面標題, name: title, widget: string }
+          - { label: 頁面代稱, name: slug, widget: hidden, default: events }
+          - label: 搜尋引擎設定
+            name: seo
+            widget: object
+            fields:
+              - { label: SEO 標題, name: title, widget: string }
+              - { label: SEO 摘要, name: description, widget: text }
+          - label: 活動項目
+            name: items
+            widget: list
+            fields:
+              - { label: 日期, name: date, widget: string }
+              - { label: 類型, name: type, widget: string }
+              - { label: 標題, name: title, widget: string }
+              - { label: 內容, name: contents, widget: text }
+              - { label: 封面圖片（可選）, name: coverImage, widget: image, required: false }
+      - label: 成員
+        name: members
+        file: content/pages/members.json
+        format: json
+        fields:
+          - { label: 頁面標題, name: title, widget: string }
+          - { label: 頁面代稱, name: slug, widget: hidden, default: members }
+          - label: 搜尋引擎設定
+            name: seo
+            widget: object
+            fields:
+              - { label: SEO 標題, name: title, widget: string }
+              - { label: SEO 摘要, name: description, widget: text }
+          - label: 成員與顧問
+            name: items
+            widget: list
+            fields:
+              - { label: 年度, name: year, widget: string }
+              - { label: 類型, name: type, widget: select, options: [core, consultant] }
+              - { label: 組別／職務, name: title, widget: text }
+              - { label: 姓名, name: name, widget: text }
+              - { label: 部落, name: village, widget: text }
+              - { label: 族語認證, name: certification, widget: text }
+              - { label: 學歷, name: study, widget: text }
+              - { label: 專長, name: profession, widget: text }
+              - { label: 個人照片（可選）, name: profileImage, widget: image, required: false }
+              - { label: 個人照片替代文字, name: profileImageAlt, widget: string, required: false }
+      - label: 田野紀錄
+        name: projects
+        file: content/pages/projects.json
+        format: json
+        fields:
+          - { label: 頁面標題, name: title, widget: string }
+          - { label: 頁面代稱, name: slug, widget: hidden, default: projects }
+          - label: 搜尋引擎設定
+            name: seo
+            widget: object
+            fields:
+              - { label: SEO 標題, name: title, widget: string }
+              - { label: SEO 摘要, name: description, widget: text }
+          - label: 田野紀錄
+            name: items
+            widget: list
+            fields:
+              - { label: 日期, name: date, widget: string }
+              - { label: 地區, name: area, widget: text }
+              - { label: 部落, name: village, widget: text }
+              - { label: 受訪者, name: 受訪者, widget: text }
+              - { label: 田調內容, name: 田調內容, widget: text }
+              - { label: 田調成員, name: 田調成員, widget: text }
+              - { label: 封面圖片（可選）, name: coverImage, widget: image, required: false }
+              - label: 圖片集
+                name: gallery
+                widget: list
+                required: false
+                field: { label: 圖片, name: image, widget: image }

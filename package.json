@@ -1,0 +1,22 @@
+{
+  "name": "ketayalyouth.com",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "cms": "decap-server",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types"
+  },
+  "devDependencies": {
+    "prettier": "3.9.6",
+    "decap-server": "^3.11.5",
+    "turbo": "^2.11.10",
+    "typescript": "7.0.2"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=24"
+  }
+}
